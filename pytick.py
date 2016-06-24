@@ -10,6 +10,8 @@ __author__ = "Vimal A.R"
 __email__ = "arvimal@yahoo.in"
 __version__ = "0.1"
 
+EDITOR = "/usr/bin/gedit"
+
 
 class pytick(object):
 
@@ -90,10 +92,9 @@ class pytick(object):
             path = "/home/" + \
                 getpass.getuser() + "/pytick/tickets/" + datedir + "/"
             actualcase = path + case
-            editor = "/usr/bin/gedit"
 
             if os.path.exists(actualcase):
-                subprocess.Popen((editor, actualcase))
+                subprocess.Popen((EDITOR, actualcase))
             else:
                 if not os.path.exists(path):
                     os.makedirs(path)
@@ -101,7 +102,7 @@ class pytick(object):
                         fd.write("Case number : \n")
                         fd.write("Subject     : \n\n")
                         fd.write("KCS         : \n\n")
-                    subprocess.Popen((editor, actualcase))
+                    subprocess.Popen((EDITOR, actualcase))
         except ValueError:
             print "\n'open' takes an integer value for ticket number !!"
             self.pytick_loop()
