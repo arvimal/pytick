@@ -38,9 +38,9 @@ class pytick(object):
         """
         data_dir = "/home/" + getpass.getuser() + "/pytick/tickets/"
         if not os.path.exists(data_dir):
-            print "\nInitial configuration\n"
+            print("\nInitial configuration\n")
             os.makedirs(data_dir)
-            print "Cases will be stored in :", data_dir
+            print("Cases will be stored in {0}".format(data_dir))
             self.spacer(20)
             self.pytick_loop()
         else:
@@ -54,12 +54,12 @@ class pytick(object):
         :return: None
         """
         while True:
-            print ""
+            print("")
             value = raw_input("pytick >>> ")
             # How can we get tab-completion in here?
             value = value.split(" ")
             if len(value) == 1 and value[0] == "open":
-                print "\n'open' needs a ticket number !!"
+                print("\n'open' needs a ticket number!")
                 self.pytick_loop()
             elif len(value) == 2 and value[0] == "open":
                 self.open(value[1])
@@ -104,7 +104,7 @@ class pytick(object):
                         fd.write("KCS         : \n\n")
                     subprocess.Popen((EDITOR, actualcase))
         except ValueError:
-            print "\n'open' takes an integer value for ticket number !!"
+            print("\n'open' takes an integer value for ticket number!")
             self.pytick_loop()
 
     def search(self, *args):
@@ -135,13 +135,12 @@ class pytick(object):
         Usage info
         :return: None
         """
-        print ""
-        print "Usage : "
-        print " 1) open   <case-number> - To open a new or existing case."
-        print " 2) search <key-word>    - To search an already existing case. "
-        print " 3) list   <case-number> - To list cases according to dates. "
-        print " 4) help                 - Prints this help message. "
-        print " 5) quit                 - Quits pytick. "
+        print("\nUsage : ")
+        print(" 1) open   <case-number> - To open a new or existing case.")
+        print(" 2) search <key-word>    - To search an already existing case. ")
+        print(" 3) list   <case-number> - To list cases according to dates. ")
+        print(" 4) help                 - Prints this help message. ")
+        print(" 5) quit                 - Quits pytick. ")
 
 if __name__ == "__main__":
     pytick_object = pytick()
