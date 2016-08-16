@@ -10,11 +10,11 @@ Some of the features (or upcoming ones) are :
 2. Open existing cases.
 3. Search for keywords and list relevant cases.
 4. Add relevant info to the cases such as:
-	a. Knowledge base articles
-	b. Worked hours
-	c. Shift timings, if applicable.
+	1. Knowledge base articles
+	2. Worked hours
+	3. Shift timings, if applicable.
 5. Print reports of cases worked on various search criteria.
-6. <Several other ideas that can come up>
+6. ..Several others..
 
 
 ### Features in alpha v1:
